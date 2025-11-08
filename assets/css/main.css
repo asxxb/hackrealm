@@ -12945,4 +12945,12 @@ background: linear-gradient(135deg, #ED358F, #383293);
   opacity: 40%;
 }
 
+.badge-box{
+   width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+
+}
+
 /*============= ABOUT CSS AREA ENDS ===============*//*# sourceMappingURL=main.css.map */

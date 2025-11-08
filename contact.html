@@ -279,55 +279,65 @@
 
         <div class="col-xl-6">
           <div class="space30 d-xl-none d-block"></div>
-          <div class=" contact-widget-area-inner heading1">
-            <h4 data-aos="fade-left" data-aos-duration="900">Join Our Courses Today</h4>
-            <div class="space12"></div>
-            <p data-aos="fade-left" data-aos-duration="1100">Unlock practical knowledge, expert insights, and hands-on
-              experience. Register now to begin your path to success.</p>
-            <div class="space12"></div>
-            <div class="contact-boxarea" data-aos="fade-left" data-aos-duration="1200">
-              <div class="row">
-                <div class="col-xl-6 col-md-6" style="margin-bottom: 30px;">
-                  <div class="input-area">
-                    <input type="text" placeholder="Full Name">
-                  </div>
-                </div>
-                <div class="col-xl-6 col-md-6" style="margin-bottom: 30px;">
-                  <div class="input-area">
-                    <input type="email" placeholder="Email">
-                  </div>
-                </div>
+  <div class="contact-widget-area-inner heading1">
+    <h4 data-aos="fade-left" data-aos-duration="900">Join Our Courses Today</h4>
+    <div class="space12"></div>
+    <p data-aos="fade-left" data-aos-duration="1100">
+      Unlock practical knowledge, expert insights, and hands-on experience. Register now to begin your path to success.
+    </p>
+    <div class="space12"></div>
 
+    <!-- Form starts here -->
+    <form id="courseForm" class="contact-boxarea" data-aos="fade-left" data-aos-duration="1200">
+      <div class="row">
 
-                <div class="col-xl-12 col-md-12">
-                  <div class="input-area">
-                    <input type="phone" placeholder="Phone Number">
-                  </div>
-                </div>
-
-                <div class="col-xl-12 col-md-12" style="margin-bottom: 30px;">
-                  <div class="input-area">
-                    <input type="text" placeholder="Qualification">
-                  </div>
-                </div>
-
-
-
-
-                <!-- <div class="col-xl-12 col-md-12">
-                                <div class="input-area">
-                                    <textarea placeholder="How can we help you?"></textarea>
-                                </div>
-                            </div> -->
-
-                <div class="col-xl-12 col-md-12" style="margin-bottom: 30px;">
-                  <div class="input-area">
-                    <button type="submit" class="vl-btn1">Send Now <i class="fa-solid fa-arrow-right"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="col-xl-6 col-md-6 mb-3">
+          <div class="input-area">
+            <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
           </div>
+        </div>
+
+        <div class="col-xl-6 col-md-6 mb-3">
+          <div class="input-area">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-md-12 mb-3">
+          <div class="input-area">
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-md-12 mb-3">
+          <div class="input-area">
+            <input type="text" name="qualification" id="qualification" placeholder="Qualification">
+          </div>
+        </div>
+
+        <div class="col-xl-12 col-md-12 mb-3">
+          <div class="input-area">
+            <select name="subject" id="subject" class="country-area nice-select" required>
+              <option value="" data-display="Select Course">Select Course</option>
+              <option value="dsoc">Diploma in Security Operations Center (DSOC)</option>
+              <option value="dpen">Diploma in Penetration Testing (DPEN)</option>
+              <option value="dcna">Diploma in Cyber Network Administration (DCNA)</option>
+      <option value="dpam">Diploma in Privileged Access Management (DPAM)</option>
+            </select>
+    </div>
+  </div>
+
+        <div class="col-xl-12 col-md-12">
+          <div class="input-area">
+            <button id="submitBtn" type="submit" class="vl-btn1">
+              Send Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
         </div>
       </div>
     </div>
