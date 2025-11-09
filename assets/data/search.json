@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Home",
+    "url": "/index.html",
+    "content": "Learn about essential cybersecurity practices for students and professionals."
+  },
+  {
+    "title": "Blogs",
+    "url": "/blog.html",
+    "content": "A detailed explanation of firewalls and how they prevent unauthorized access."
+  },
+  {
+    "title": "Courses",
+    "url": "/courses.html",
+    "content": "A list of the most dangerous cyber threats and prevention methods."
+  }
+]
