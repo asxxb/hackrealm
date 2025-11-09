@@ -1261,47 +1261,51 @@ Trains learners on managing privileged accounts, implementing strict access cont
             <p data-aos="fade-left" data-aos-duration="1100">We’re here to support you every step of the way. Whether
               you questions about our services, need assistance with a cybersecurity challenge.</p>
             <div class="space12"></div>
-            <div class="contact-boxarea" data-aos="fade-left" data-aos-duration="1200">
+            <form id="messageForm" class="contact-boxarea" data-aos="fade-left" data-aos-duration="1200">
+            <div class="contact-boxarea" data-aos="fade-left"   data-aos-duration="1200">
               <div class="row">
                 <div class="col-xl-6 col-md-6">
-                  <div class="input-area">
-                    <input type="text" placeholder="Full Name">
-                  </div>
+                   <div class="input-area">
+        <input type="text" name="full_name" id="msg_full_name" placeholder="Full Name" required>
+      </div>
                 </div>
                 <div class="col-xl-6 col-md-6">
-                  <div class="input-area">
-                    <input type="email" placeholder="Email">
-                  </div>
+                   <div class="input-area">
+        <input type="email" name="email" id="msg_email" placeholder="Email" required>
+      </div>
+                </div>
+
+                <div class="col-xl-12 col-md-12">
+                 <div class="input-area">
+        <select name="category" id="msg_category" class="country-area nice-select" required>
+          <option value="" data-display="Select Category">Select Category</option>
+          <option value="faq">General FAQ</option>
+          <option value="query">Course Inquiry</option>
+          <option value="admission">Admission Assistance</option>
+          <option value="career">Career Guidance</option>
+          <option value="support">Technical Support</option>
+          <option value="feedback">Feedback or Suggestions</option>
+        </select>
+      </div>
+                </div>
+
+                <div class="col-xl-12 col-md-12">
+                      <div class="input-area">
+        <textarea name="message" id="msg_message" placeholder="How can we help you?" required></textarea>
+      </div>
                 </div>
 
                 <div class="col-xl-12 col-md-12">
                   <div class="input-area">
-                <select>
-  <option value="" data-display="Select Category">Select Category</option>
-  <option value="faq">General FAQ</option>
-  <option value="query">Course Inquiry</option>
-  <option value="admission">Admission Assistance</option>
-  <option value="career">Career Guidance</option>
-  <option value="support">Technical Support</option>
-  <option value="feedback">Feedback or Suggestions</option>
-</select>
-
-                  </div>
-                </div>
-
-                <div class="col-xl-12 col-md-12">
-                  <div class="input-area">
-                    <textarea placeholder="How can we help you?"></textarea>
-                  </div>
-                </div>
-
-                <div class="col-xl-12 col-md-12">
-                  <div class="input-area">
-                    <button type="submit" class="vl-btn1">Send Now <i class="fa-solid fa-arrow-right"></i></button>
+                   <button id="msgSubmitBtn" type="submit" class="vl-btn1">
+          Send Now <i class="fa-solid fa-arrow-right"></i>
+        </button>
                   </div>
                 </div>
               </div>
             </div>
+            </form>
+         
           </div>
         </div>
       </div>
@@ -1545,7 +1549,7 @@ Trains learners on managing privileged accounts, implementing strict access cont
     $btn.prop("disabled", true).html('Sending... <i class="fa-solid fa-spinner fa-spin"></i>');
 
     $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbw8Rb2dZCK_bh3ujeIjhSeqepnpxdIAN0-3DFD5vZSzs6dBXvqpspnme4057xTjwZ0uFQ/exec",
+      url: "https://script.google.com/macros/s/AKfycbz7BDKkr1YlqlROgUFsJ2dzwiseNd-sEgMHaE7VsvryTtRB-5rvfg1PE1EnDqERDLEKFQ/exec",
       data: $("#courseForm").serialize(),
       method: "POST",
       success: function (response) {
@@ -1561,6 +1565,30 @@ Trains learners on managing privileged accounts, implementing strict access cont
   });
 </script>
 
+
+<script>
+  $("#messageForm").submit(function (e) {
+    e.preventDefault();
+
+    const $btn = $("#msgSubmitBtn");
+    $btn.prop("disabled", true).html('Sending... <i class="fa-solid fa-spinner fa-spin"></i>');
+
+    $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbz6CPylnFq4JmwxpC7zzS6hVYux3kihFO5CZDOg_IZS1ondIPh2rtRZYhoJ8HtuZ3rSmg/exec",
+      data: $("#messageForm").serialize(),
+      method: "POST",
+      success: function (response) {
+        alert("Message sent successfully!");
+        $("#messageForm")[0].reset();
+        $btn.prop("disabled", false).html('Send Now <i class="fa-solid fa-arrow-right"></i>');
+      },
+      error: function (err) {
+        alert("Something went wrong. Please try again.");
+        $btn.prop("disabled", false).html('Send Now <i class="fa-solid fa-arrow-right"></i>');
+      }
+    });
+  });
+</script>
 
 
 
